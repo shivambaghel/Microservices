@@ -1,0 +1,20 @@
+application:
+  name: Accounts
+
+server:
+  port: 8081
+
+spring:
+  h2:
+    console:
+      enabled: true  #enabled to access the database in browser
+  datasource:
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update  #update the schema automatically after program start (schema.sql)
+    show-sql: true  #show sql queries in console

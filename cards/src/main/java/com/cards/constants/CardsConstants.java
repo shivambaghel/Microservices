@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.constants;
+package com.cards.constants;
 
 public final class CardsConstants {
 

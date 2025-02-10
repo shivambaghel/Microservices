@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.entity;
+package com.cards.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

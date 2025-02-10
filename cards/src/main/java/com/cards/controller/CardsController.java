@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.controller;
+package com.cards.controller;
 
 
 import com.cards.constants.CardsConstants;

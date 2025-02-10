@@ -1,0 +1,27 @@
+package cards.src.main.java.com.cards.servive;
+
+public interface ICardsService {
+
+    void createCard(String mobileNumber);
+
+    /**
+     *
+     * @param mobileNumber - Input mobile Number
+     *  @return Card Details based on a given mobileNumber
+     */
+    CardsDto fetchCard(String mobileNumber);
+
+    /**
+     *
+     * @param cardsDto - CardsDto Object
+     * @return boolean indicating if the update of card details is successful or not
+     */
+    boolean updateCard(CardsDto cardsDto);
+
+    /**
+     *
+     * @param mobileNumber - Input Mobile Number
+     * @return boolean indicating if the delete of card details is successful or not
+     */
+    boolean deleteCard(String mobileNumber);
+}

@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.dto;
+package com.cards.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;

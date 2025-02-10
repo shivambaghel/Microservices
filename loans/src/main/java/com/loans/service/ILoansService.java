@@ -1,7 +1,6 @@
 package com.loans.service;
 
-import com.eazybytes.loans.dto.LoansDto;
-
+import com.loans.dto.LoansDto;
 public interface ILoansService {
 
     /**

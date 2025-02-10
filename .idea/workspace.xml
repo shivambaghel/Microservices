@@ -4,18 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e0efd0b-8ca0-470a-ad3b-79672cb4c8c2" name="Changes" comment="Accounts Microservice">
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/constants/AccountsConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/exception/CustomerAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/mapper/AccountsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/mapper/CustomerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/service/IAccountsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/service/impl/AccountsServiceImpl.java" afterDir="false" />
+    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/service/ICardsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/dto/ErrorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/dto/ErrorResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/dto/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/service/impl/AccountsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/service/impl/AccountsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/audit/AuditAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/audit/AuditAwareImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/constants/CardsConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/constants/CardsConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/controller/CardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/CardsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/CardsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/ErrorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/ErrorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/ResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/ResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/entity/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/entity/Cards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/CardAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/CardAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/mapper/CardsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/mapper/CardsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/repository/CardsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/repository/CardsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/servive/impl/CardsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/service/impl/CardsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/loans/service/ILoansService.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/loans/service/ILoansService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,14 +46,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -47,79 +66,87 @@
   }
 }]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
+  "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2soIDP0nrCnyz98y9ilweFrdNG2" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2srDxvDd1OIwptAXgVeLJU4Qfnc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Accounts Microservice.executor": "Run",
+    "Application.AccountsApplication.executor": "Run",
+    "Application.CardsApplication.executor": "Run",
+    "Application.LoansApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/singh/git/Microservices"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Accounts Microservice" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="21" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cards.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoansApplication">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.accounts.AccountsApplication" />
       <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cards.CardsApplication" />
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.loans.LoansApplication" />
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.loans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.AccountsApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2e0efd0b-8ca0-470a-ad3b-79672cb4c8c2" name="Changes" comment="" />
-      <created>1739115382666</created>
+      <changelist id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="" />
+      <created>1739205049781</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1739115382666</updated>
+      <updated>1739205049781</updated>
     </task>
-    <task id="LOCAL-00001" summary="Accounts Microservice">
-      <option name="closed" value="true" />
-      <created>1739115948157</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1739115948157</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Accounts Microservice">
-      <option name="closed" value="true" />
-      <created>1739116100075</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1739116100075</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Accounts Microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Accounts Microservice" />
   </component>
 </project>

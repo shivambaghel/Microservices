@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.audit;
+package com.cards.audit;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

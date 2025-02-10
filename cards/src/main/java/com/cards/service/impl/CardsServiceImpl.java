@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.servive.impl;
+package com.cards.service.impl;
 
 import com.cards.constants.CardsConstants;
 import com.cards.dto.CardsDto;
@@ -87,6 +87,5 @@ public class CardsServiceImpl implements ICardsService {
         cardsRepository.deleteById(cards.getCardId());
         return true;
     }
-
 
 }

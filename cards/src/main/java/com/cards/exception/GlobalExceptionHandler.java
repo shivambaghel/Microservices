@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.exception;
+package com.cards.exception;
 
 import com.cards.dto.ErrorResponseDto;
 import org.springframework.http.HttpHeaders;

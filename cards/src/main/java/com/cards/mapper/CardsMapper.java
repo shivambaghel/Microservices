@@ -1,4 +1,4 @@
-package cards.src.main.java.com.cards.mapper;
+package com.cards.mapper;
 
 import com.cards.dto.CardsDto;
 import com.cards.entity.Cards;

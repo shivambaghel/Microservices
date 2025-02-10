@@ -73,7 +73,7 @@ public class AccountsServiceImpl implements IAccountsService {
     @Override
     public boolean updateAccount(CustomerDto customerDto) {
         boolean isUpdated = false;
-        AccountsDto accountsDto = customerDto.getAccountsDto();
+        AccountsDto accountsDto = customerDto.getAccountDto();
         if(accountsDto !=null ){
             Accounts accounts = accountsRepository.findById(accountsDto.getAccountNumber()).orElseThrow(
                     () -> new ResourceNotFoundException("Account", "AccountNumber", accountsDto.getAccountNumber().toString())

@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @MappedSuperclass  // it annotates that , this class going to be parent class for other entity class
-@EntityListeners(AuditingEntityListener.class) // it will automatically set the created and updated date and time
+@EntityListeners(AuditingEntityListener.class) // it will automatically set the created and updated date and time {audit package)
 @Getter
 @Setter
 @ToString

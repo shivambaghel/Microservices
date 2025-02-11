@@ -28,5 +28,21 @@ Section 4:
 9- pws     -> current directory details
 
 
+##2 Buildpack Approach
+
+-- pom.xml configuration to setup docker setup (image name config in plugin)
+
+1- mvn spring-boot:build-image
+2- docker run -d -p 8081:8081 dockerAccountUsername/loans:s4
+
+
+
+##3 Google jib approach [only support java]
+
+
+
+
+
+
 
 

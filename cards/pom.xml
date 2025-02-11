@@ -11,6 +11,7 @@
 	<groupId>com</groupId>
 	<artifactId>cards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>cards</name>
 	<description>Spring Boot project - Cards</description>
 	<url/>
@@ -74,6 +75,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>dockerAccountUsername/${project.artifactId}:s4</name>
+					</image>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -88,6 +94,19 @@
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
+
+			<!-- pluin not working , so replacing it with build pack-->
+<!--			<plugin>-->
+<!--				<groupId>com.google.cloud.tools</groupId>-->
+<!--				<artifactId>jib-maven-plugin</artifactId>-->
+<!--				<version>3.4.2</version>-->
+<!--				<configuration>-->
+<!--					<to>-->
+<!--						<image>dockerAccountUsername/${project.artifactId}:s4</image>-->
+<!--					</to>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
 		</plugins>
 	</build>
 

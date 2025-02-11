@@ -1,0 +1,32 @@
+
+
+Section 4:
+
+##1 Docker file Approach
+
+1- docker version     -> check docker is installed or not
+
+2- docker build . -t dockerAccountUsername/accounts(custom tag):s4(custom value)
+              if running command not at the jar location replace (.) with path details -> ex - Microservices/target/
+
+3- docker images      -> show all docker instance
+4- docker ps          -> all docker running instances
+4.1- docker ps -a     -> all docker stopped instances
+
+5- docker inspect image imageId(from docker cli)    -> all details about docker image
+
+6- docker run -d -p 8080:8080 dockerAccountUsername/accounts:s4(docker image name)  -> running docker container from docker image
+   container 1 -> 8080(expose container port outside docker network):8080([Internal] at what port container going to start)
+   container 2 -> 8081:8080(2 or more can have same port as internally they are working on own env/vm)
+   -d  detached mode, i don't want to see logs in cli (optional)
+
+6.1- docker start ***containerId****  -> to start any existing container
+6.2- docker stop ***containerId****  -> to stop any existing container
+
+7- ctrl+c  -> stop the container
+8- clear   -> clean the console
+9- pws     -> current directory details
+
+
+
+

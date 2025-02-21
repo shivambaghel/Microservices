@@ -77,7 +77,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>singhsbaghel/${project.artifactId}:s4</name>
+						<name>singhsbaghel/${project.artifactId}:s6</name>
 					</image>
 				</configuration>
 			</plugin>

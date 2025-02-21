@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: "dockerAccountUsername/accounts:s4"   #image details
+    image: "singhsbaghel/accounts:s4"   #image details
     container_name: accounts-ms  # custom name , if not provided random name will be populated by the docker
     ports:
       - "8080:8080"
@@ -12,7 +12,7 @@ services:
     networks:
       - ms-bank # common network for microservices, it can be anything
   loans:
-    image: "dockerAccountUsername/loans:s4"
+    image: "singhsbaghel/loans:s4"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -23,7 +23,7 @@ services:
     networks:
       - ms-bank
   cards:
-    image: "dockerAccountUsername/cards:s4"
+    image: "singhsbaghel/cards:s4"
     container_name: cards-ms
     ports:
       - "9000:9000"

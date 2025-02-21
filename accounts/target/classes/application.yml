@@ -1,10 +1,9 @@
-application:
-  name: Accounts
-
 server:
-  port: 8081
+  port: 8080
 
 spring:
+  application:
+    name: accounts
   h2:
     console:
       enabled: true  #enabled to access the database in browser

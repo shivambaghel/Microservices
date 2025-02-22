@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+# @configurationProperties example - to read multiple properties from application.yml at once
+cards:
+  message: "Welcome to Cards related QA APIs "
+  contactDetails:
+    name: "John Doe - QA Developer"
+    email: "john@eazybank.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345

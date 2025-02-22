@@ -4,16 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/dto/AccountsContactInfoDto.java" afterDir="false" />
+    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section6 - docker setup &#10;3Approaches - reading Properties from properties file">
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/src/main/resources/application_qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/dto/CardsContactInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cards/src/main/resources/application_qa.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/java/com/loans/dto/LoansContactInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/application_prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loans/src/main/resources/application_qa.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/AccountsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/AccountsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/accounts/controller/AccountsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/AccountsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/AccountsApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/controller/AccountsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/controller/AccountsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/CardsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/CardsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/cards/controller/CardsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/classes/com/cards/CardsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/com/cards/CardsApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/classes/com/cards/controller/CardsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/com/cards/controller/CardsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/loans/LoansApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/loans/LoansApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/loans/controller/LoansController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/loans/LoansApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/loans/LoansApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/loans/controller/LoansController.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/loans/controller/LoansController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +68,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2srDxvDd1OIwptAXgVeLJU4Qfnc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,7 +84,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "Section6--Configurations-management-in-Microservices",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/singh/git/Microservices/loans"
+    "last_opened_file_path": "C:/Users/singh/git/Microservices/loans/src/main/resources"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,6 +92,9 @@
       <recent name="com.cards.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\singh\git\Microservices\loans\src\main\resources" />
+      <recent name="C:\Users\singh\git\Microservices\cards\src\main\resources" />
+      <recent name="C:\Users\singh\git\Microservices\accounts\src\main\resources" />
       <recent name="C:\Users\singh\git\Microservices\loans" />
       <recent name="C:\Users\singh\git\Microservices\cards" />
     </key>
@@ -117,11 +139,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.AccountsApplication" />
+      <item itemvalue="Application.CardsApplication" />
+      <item itemvalue="Application.LoansApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoansApplication" />
-        <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.CardsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -134,6 +161,20 @@
       <option name="presentableId" value="Default" />
       <updated>1739205049781</updated>
     </task>
+    <task id="LOCAL-00001" summary="section6 - docker setup &#10;3Approaches - reading Properties from properties file">
+      <option name="closed" value="true" />
+      <created>1740176872372</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740176872372</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge pull request #3 from shivambaghel/Section4--Deployment-scalability-portability-of-Microservices-using-Docker&#10;&#10;Section4  deployment scalability portability of microservices using docker" />
+    <MESSAGE value="section6 - docker setup &#10;3Approaches - reading Properties from properties file" />
+    <option name="LAST_COMMIT_MESSAGE" value="section6 - docker setup &#10;3Approaches - reading Properties from properties file" />
   </component>
 </project>

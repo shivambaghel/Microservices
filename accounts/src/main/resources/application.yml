@@ -17,7 +17,18 @@ spring:
     hibernate:
       ddl-auto: update  #update the schema automatically after program start (schema.sql)
     show-sql: true  #show sql queries in console
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+#  profiles:
+#    active: "qa"                  // manual way to activate profile
 
+#2    way to activate profile while running the application
+#2.1 command line way to activate profile - run configuration -> program arguments -> --spring.profiles.active=qa --build.version=1.1
+#2.2 jvm system variable way to activate profile - Run configuration -> VM options -> -Dspring.profiles.active=qa -Dbuild.version=1.1
+#2.3 environment variable way to activate profile - Run configuration -> Environment variables -> SPRING_PROFILES_ACTIVE=qa;BUILD_VERSION=1.1;
+# priority order - command line > jvm system variable > environment variable > application.yml
 build:
   version: 0.1
 

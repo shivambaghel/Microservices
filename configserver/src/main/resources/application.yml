@@ -6,7 +6,8 @@ spring:
   cloud:
     server:
       native:
-        searchLocations: "classpath:/config"
+        #searchLocations: "classpath:/config"
+        search-locations: "file:///Users//eazybytes//Documents//config"
 
 server:
   port: 8071

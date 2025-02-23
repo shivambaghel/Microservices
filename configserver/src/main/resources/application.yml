@@ -2,12 +2,23 @@ spring:
   application:
     name: "configserver"
   profiles:
-    active: native
+    #active: native
+     active: git
   cloud:
     server:
-      native:
+      #native:
         #searchLocations: "classpath:/config"
-        search-locations: "file:///Users//eazybytes//Documents//config"
+        #search-locations: "file:///Users//eazybytes//Documents//config"
+      git:
+        uri: "https://github.com/shivambaghel/Microservices.git"  # github url for the config repo - microservicesconfig repo
+        default-label: main  # git default branch name needs to be configured here
+        timeout: 5 # timeout in seconds
+        clone-on-start: true # clone the repo on startup else it will clone on first request
+        force-pull: true # force pull on every request to start/stop the server
+
+      # can refer spring config doc to configure  DB/ private git repo/ vault etc.
+
+
 
 server:
   port: 8071

@@ -42,7 +42,15 @@ management:
         # include: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
         # exclude: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
         # exclude: "*" #exclude all actuator endpoints
-
+  health:
+    readiness:
+      enabled: true # enable/disable readiness probe -> to check if the service is ready to serve the request
+    liveness:
+      enabled: true # enable/disable liveness probe -> to check if the service is alive
+  endpoint:
+    health:
+      probes:
+        enabled: true # enable/disable readiness/liveness probes check -> default is true -> actuator/health/liveness, actuator/health/readiness
 
 
 ## actuator & rabbitmq changes are part of spring cloud bus webhook (monitor dependency) implementation

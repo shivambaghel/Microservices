@@ -20,3 +20,9 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/" #import configuration from config server using path
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #expose all actuator endpoints

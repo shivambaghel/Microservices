@@ -25,4 +25,14 @@ encrypt:
 server:
   port: 8071
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #expose all actuator endpoints
+        # include: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
+        # exclude: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
+        # exclude: "*" #exclude all actuator endpoints
+
+
 

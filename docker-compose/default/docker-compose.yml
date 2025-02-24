@@ -1,7 +1,7 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
   rabbit:
-    image: rabbitmq:3.13-management
+    image: rabbitmq:4.0-management
     hostname: rabbitmq
     ports:
       - "5672:5672"
@@ -22,7 +22,7 @@ services:
     ports:
       - "8071:8071"
     healthcheck:
-      test: "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"
+      test: "curl --fail --silent http://localhost:8071/actuator/health/liveness | grep UP || exit 1"
       interval: 10s
       timeout: 10s
       start_period: 10s

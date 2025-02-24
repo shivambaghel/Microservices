@@ -1,7 +1,7 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
   rabbit:
-    image: rabbitmq:3.13-management
+    image: rabbitmq:4.0-management
     hostname: rabbitmq
     ports:
       - "5672:5672"

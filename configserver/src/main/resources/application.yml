@@ -43,9 +43,9 @@ management:
         # exclude: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
         # exclude: "*" #exclude all actuator endpoints
   health:
-    readiness:
+    readiness-state:
       enabled: true # enable/disable readiness probe -> to check if the service is ready to serve the request
-    liveness:
+    liveness-state:
       enabled: true # enable/disable liveness probe -> to check if the service is alive
   endpoint:
     health:

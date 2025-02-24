@@ -9,6 +9,7 @@ spring:
     # docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4.0-management
     # install rabbitmq in docker and run it with the above command
     # actuator endpoints: actuator/bus-refresh, actuator/bus-env, actuator/bus-logger, actuator/bus-trace
+    # spring-cloud-bus: to refresh all the instances of the service at once
   profiles:
     active: native
     #active: git
@@ -44,3 +45,4 @@ management:
 
 
 
+## actuator & rabbitmq changes are part of spring cloud bus webhook (monitor dependency) implementation

@@ -4,40 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section6 - spring cloud config - Docker setup - ordering of modules">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section6 - Final Push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application_qa.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/dto/AccountsContactInfoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/dto/AccountsContactInfoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/surefire-reports/TEST-com.accounts.AccountsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/surefire-reports/TEST-com.accounts.AccountsApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/surefire-reports/com.accounts.AccountsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/surefire-reports/com.accounts.AccountsApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/classes/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/classes/application_qa.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/classes/com/cards/dto/CardsContactInfoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/com/cards/dto/CardsContactInfoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/surefire-reports/TEST-com.cards.CardsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/surefire-reports/TEST-com.cards.CardsApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/surefire-reports/com.cards.CardsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/surefire-reports/com.cards.CardsApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/application_qa.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/classes/com/loans/dto/LoansContactInfoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/classes/com/loans/dto/LoansContactInfoDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/surefire-reports/TEST-com.loans.LoansApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/surefire-reports/TEST-com.loans.LoansApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/target/surefire-reports/com.loans.LoansApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/surefire-reports/com.loans.LoansApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740429045311</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="section6 - Final Push">
+      <option name="closed" value="true" />
+      <created>1740476735318</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740476735318</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -324,6 +300,7 @@
     <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (automatic - github webhook)" />
     <MESSAGE value="section6 - spring cloud config - Optimizing Docker Compose file - along with readiness/liveness setup" />
     <MESSAGE value="section6 - spring cloud config - Docker setup - ordering of modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="section6 - spring cloud config - Docker setup - ordering of modules" />
+    <MESSAGE value="section6 - Final Push" />
+    <option name="LAST_COMMIT_MESSAGE" value="section6 - Final Push" />
   </component>
 </project>

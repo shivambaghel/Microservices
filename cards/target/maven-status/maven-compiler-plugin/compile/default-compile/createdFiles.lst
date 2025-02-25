@@ -1,5 +1,6 @@
 com\cards\exception\CardAlreadyExistsException.class
 com\cards\constants\CardsConstants.class
+com\cards\dto\CardsContactInfoDto.class
 com\cards\exception\GlobalExceptionHandler.class
 com\cards\CardsApplication.class
 com\cards\mapper\CardsMapper.class

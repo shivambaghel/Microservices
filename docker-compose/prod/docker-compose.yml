@@ -1,0 +1,81 @@
+# dependency -> loan/cards/accounts -> configserver -> rabbitmq
+services:
+  rabbit:
+    image: rabbitmq:4.0-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
+  configserver:
+    image: "singhsbaghel/configserver:s6"
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    healthcheck:
+      test: "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 10s
+      start_period: 10s
+      retries: 10
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+
+  accounts:
+    image: "singhsbaghel/accounts:s6"   #image details
+    container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
+    ports:
+      - "8080:8080"                     # "8090:8099" if case of multiple port mapping
+    environment:
+      SPRING_APPLICATION_NAME: "accounts"  # application name
+    depends_on:
+      configserver:                     # dependency on config server
+        condition: service_healthy      # service_healthy - wait for service to be healthy
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
+  loans:
+    image: "singhsbaghel/loans:s6"
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+    depends_on:
+      configserver:
+        condition: service_healthy
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
+  cards:
+    image: "singhsbaghel/cards:s6"
+    container_name: cards-ms
+    ports:
+      - "9000:9000"
+    environment:
+      SPRING_APPLICATION_NAME: "cards"
+    depends_on:
+      configserver:
+        condition: service_healthy
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+
+networks:
+  ms-bank:
+    driver: "bridge"                      # all microservices are interconnected as they are present in same network

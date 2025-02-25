@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section6 - Final Push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="module" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -54,6 +49,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2srDxvDd1OIwptAXgVeLJU4Qfnc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,12 +60,15 @@
   &quot;keyToString&quot;: {
     &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Section4--Deployment-scalability-portability-of-Microservices-using-Docker&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Section6--Configurations-management-in-Microservices&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/singh/git/Microservices/loans&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/singh/git/Microservices/docker-compose/qa&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -75,11 +76,17 @@
       <recent name="com.cards.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\singh\git\Microservices\loans" />
-      <recent name="C:\Users\singh\git\Microservices\cards" />
+      <recent name="C:\Users\singh\git\Microservices\docker-compose\qa" />
+      <recent name="C:\Users\singh\git\Microservices\docker-compose\prod" />
+      <recent name="C:\Users\singh\git\Microservices\configserver\src\main\resources\config" />
+      <recent name="C:\Users\singh\git\Microservices\loans\src\main\resources" />
+      <recent name="C:\Users\singh\git\Microservices\cards\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\singh\git\Microservices\docker-compose\default" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoansApplication">
+  <component name="RunManager" selected="Application.ConfigserverApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.accounts.AccountsApplication" />
       <module name="accounts" />
@@ -106,6 +113,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.configserver.ConfigserverApplication" />
+      <module name="configserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.loans.LoansApplication" />
       <module name="loans" />
@@ -119,8 +139,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ConfigserverApplication" />
+      <item itemvalue="Application.AccountsApplication" />
+      <item itemvalue="Application.CardsApplication" />
+      <item itemvalue="Application.LoansApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConfigserverApplication" />
         <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.CardsApplication" />
         <item itemvalue="Application.AccountsApplication" />
@@ -136,6 +163,144 @@
       <option name="presentableId" value="Default" />
       <updated>1739205049781</updated>
     </task>
+    <task id="LOCAL-00001" summary="section6 - docker setup &#10;3Approaches - reading Properties from properties file">
+      <option name="closed" value="true" />
+      <created>1740176872372</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740176872372</updated>
+    </task>
+    <task id="LOCAL-00002" summary="section6 - env Profiling">
+      <option name="closed" value="true" />
+      <created>1740204682742</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740204682742</updated>
+    </task>
+    <task id="LOCAL-00003" summary="section6 - env Profiling">
+      <option name="closed" value="true" />
+      <created>1740204742167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740204742167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="section6 - env Profiling">
+      <option name="closed" value="true" />
+      <created>1740220655310</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740220655310</updated>
+    </task>
+    <task id="LOCAL-00005" summary="section6 - spring cloud config - class path setup">
+      <option name="closed" value="true" />
+      <created>1740274161078</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740274161078</updated>
+    </task>
+    <task id="LOCAL-00006" summary="section6 - spring cloud config - Reading configurations from the class path location">
+      <option name="closed" value="true" />
+      <created>1740307369097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740307369097</updated>
+    </task>
+    <task id="LOCAL-00007" summary="section6 - spring cloud config - Reading configurations from a file system location">
+      <option name="closed" value="true" />
+      <created>1740316472996</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740316472996</updated>
+    </task>
+    <task id="LOCAL-00008" summary="section6 - spring cloud config - Reading configurations from git">
+      <option name="closed" value="true" />
+      <created>1740333943566</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740333943566</updated>
+    </task>
+    <task id="LOCAL-00009" summary="section6 - spring cloud config - Encryption &amp; Decryption of properties inside Config server">
+      <option name="closed" value="true" />
+      <created>1740383424572</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740383424572</updated>
+    </task>
+    <task id="LOCAL-00010" summary="section6 - spring cloud config - Refresh configurations at runtime using refresh actuator path">
+      <option name="closed" value="true" />
+      <created>1740394813330</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740394813330</updated>
+    </task>
+    <task id="LOCAL-00011" summary="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (Manual post api trigger needed)">
+      <option name="closed" value="true" />
+      <created>1740396909482</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740396909482</updated>
+    </task>
+    <task id="LOCAL-00012" summary="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (automatic - github webhook)">
+      <option name="closed" value="true" />
+      <created>1740397700606</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1740397700606</updated>
+    </task>
+    <task id="LOCAL-00013" summary="section6 - spring cloud config - Optimizing Docker Compose file - along with readiness/liveness setup">
+      <option name="closed" value="true" />
+      <created>1740408226840</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740408226840</updated>
+    </task>
+    <task id="LOCAL-00014" summary="section6 - spring cloud config - Docker setup - ordering of modules">
+      <option name="closed" value="true" />
+      <created>1740429045311</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740429045311</updated>
+    </task>
+    <task id="LOCAL-00015" summary="section6 - Final Push">
+      <option name="closed" value="true" />
+      <created>1740476735318</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740476735318</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge pull request #3 from shivambaghel/Section4--Deployment-scalability-portability-of-Microservices-using-Docker&#10;&#10;Section4  deployment scalability portability of microservices using docker" />
+    <MESSAGE value="section6 - docker setup &#10;3Approaches - reading Properties from properties file" />
+    <MESSAGE value="section6 - env Profiling" />
+    <MESSAGE value="section6 - spring cloud config - class path setup" />
+    <MESSAGE value="section6 - spring cloud config - Reading configurations from the class path location" />
+    <MESSAGE value="section6 - spring cloud config - Reading configurations from a file system location" />
+    <MESSAGE value="section6 - spring cloud config - Reading configurations from git" />
+    <MESSAGE value="section6 - spring cloud config - Encryption &amp; Decryption of properties inside Config server" />
+    <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using refresh actuator path" />
+    <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (Manual post api trigger needed)" />
+    <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (automatic - github webhook)" />
+    <MESSAGE value="section6 - spring cloud config - Optimizing Docker Compose file - along with readiness/liveness setup" />
+    <MESSAGE value="section6 - spring cloud config - Docker setup - ordering of modules" />
+    <MESSAGE value="section6 - Final Push" />
+    <option name="LAST_COMMIT_MESSAGE" value="section6 - Final Push" />
   </component>
 </project>

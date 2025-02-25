@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: accounts
+  profiles:
+    active: "prod"  #set active profile to prod default
   h2:
     console:
       enabled: true  #enabled to access the database in browser
@@ -17,3 +19,25 @@ spring:
     hibernate:
       ddl-auto: update  #update the schema automatically after program start (schema.sql)
     show-sql: true  #show sql queries in console
+  config:
+    import: "optional:configserver:http://localhost:8071/" #import configuration from config server using path
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #expose all actuator endpoints
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true

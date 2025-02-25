@@ -2,6 +2,7 @@ C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\audit\AuditAwareI
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\CardsApplication.java
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\constants\CardsConstants.java
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\controller\CardsController.java
+C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\dto\CardsContactInfoDto.java
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\dto\CardsDto.java
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\dto\ErrorResponseDto.java
 C:\Users\singh\git\Microservices\cards\src\main\java\com\cards\dto\ResponseDto.java

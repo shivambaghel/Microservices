@@ -2,6 +2,7 @@ C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\AccountsApp
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\audit\AuditAwareImpl.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\constants\AccountsConstants.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\controller\AccountsController.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\AccountsContactInfoDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\AccountsDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\CustomerDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\ErrorResponseDto.java

@@ -2,6 +2,7 @@ C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\audit\AuditAwareI
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\constants\LoansConstants.java
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\controller\LoansController.java
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\dto\ErrorResponseDto.java
+C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\dto\LoansContactInfoDto.java
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\dto\LoansDto.java
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\dto\ResponseDto.java
 C:\Users\singh\git\Microservices\loans\src\main\java\com\loans\entity\BaseEntity.java

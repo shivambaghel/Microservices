@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: "configserver"
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    # docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4.0-management
+    # install rabbitmq in docker and run it with the above command
+    # actuator endpoints: actuator/bus-refresh, actuator/bus-env, actuator/bus-logger, actuator/bus-trace
+    # spring-cloud-bus: to refresh all the instances of the service at once
+  profiles:
+    active: native
+    #active: git
+  cloud:
+    server:
+      native:
+        searchLocations: "classpath:/config"
+        #search-locations: "file:///Users//eazybytes//Documents//config"
+      #git:
+       # uri: "https://github.com/shivambaghel/Microservices.git"  # github url for the config repo - microservicesconfig repo
+       # default-label: main  # git default branch name needs to be configured here
+       # timeout: 5 # timeout in seconds
+       # clone-on-start: true # clone the repo on startup else it will clone on first request
+       # force-pull: true # force pull on every request to start/stop the server
+
+      # can refer spring config doc to configure  DB/ private git repo/ vault etc.
+
+encrypt:
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9" # key to encrypt/decrypt the properties directly from the config server/ no Api gateway needed
+                                       # http://localhost:8071/encrypt  pass value in body to encrypt -> response will be encrypted value
+
+server:
+  port: 8071
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #expose all actuator endpoints
+        # include: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
+        # exclude: env,beans,info,health,metrics,prometheus,refresh,httptrace,loggers,logfile,threaddump,heapdump
+        # exclude: "*" #exclude all actuator endpoints
+  health:
+    readiness-state:
+      enabled: true # enable/disable readiness probe -> to check if the service is ready to serve the request
+    liveness-state:
+      enabled: true # enable/disable liveness probe -> to check if the service is alive
+  endpoint:
+    health:
+      probes:
+        enabled: true # enable/disable readiness/liveness probes check -> default is true -> actuator/health/liveness, actuator/health/readiness
+
+
+## actuator & rabbitmq changes are part of spring cloud bus webhook (monitor dependency) implementation

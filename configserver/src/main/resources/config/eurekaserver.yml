@@ -1,0 +1,15 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false    # this is the eureka server, so it should not register itself
+    fetchRegistry: false         # this is the eureka server, so it should not fetch registry
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+# localhost:8071/eureka/{env value -> default/prod/qa} -> to access eureka config values once config server is up

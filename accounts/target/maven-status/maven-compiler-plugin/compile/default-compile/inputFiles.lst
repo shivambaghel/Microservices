@@ -2,10 +2,14 @@ C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\AccountsApp
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\audit\AuditAwareImpl.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\constants\AccountsConstants.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\controller\AccountsController.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\controller\CustomerController.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\AccountsContactInfoDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\AccountsDto.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\CardsDto.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\CustomerDetailsDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\CustomerDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\ErrorResponseDto.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\LoansDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\dto\ResponseDto.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\entity\Accounts.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\entity\BaseEntity.java
@@ -17,5 +21,9 @@ C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\mapper\Acco
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\mapper\CustomerMapper.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\repository\AccountsRepository.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\repository\CustomerRepository.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\CardsFeignClient.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\LoansFeignClient.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\IAccountsService.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\ICustomersService.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\impl\AccountsServiceImpl.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\impl\CustomersServiceImpl.java

@@ -1,0 +1,8 @@
+com\accounts\dto\CardsDto.class
+com\accounts\controller\CustomerController.class
+com\accounts\dto\LoansDto.class
+com\accounts\dto\CustomerDetailsDto.class
+com\accounts\service\ICustomersService.class
+com\accounts\service\client\LoansFeignClient.class
+com\accounts\service\client\CardsFeignClient.class
+com\accounts\service\impl\CustomersServiceImpl.class

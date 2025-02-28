@@ -50,6 +50,11 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<version>9.2.0</version>
@@ -94,7 +99,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>singhsbaghel/${project.artifactId}:s7</name>
+						<name>singhsbaghel/${project.artifactId}:s8</name>
 					</image>
 				</configuration>
 			</plugin>

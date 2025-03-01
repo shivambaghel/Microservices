@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: gatewayserver
+  profiles:
+    active: prod
+  config:
+    import: "optional:configserver:http://localhost:8071/" #import configuration from config server using path
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #enable service discovery
+          lowercaseserviceid: true #convert service id to lowercase
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #expose all actuator endpoints
+  endpoint:
+    health:
+      show-details: always #show detailed health information
+    shutdown:
+      access: unrestricted
+    gateway:
+      enabled: true #enable gateway actuator endpoint
+  info:
+    env:
+      enabled: true #enable environment info in actuator info endpoint
+
+endpoints:
+  shutdown:
+    enabled: true
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Gateway/Edge Server"
+    version: 1.0.0
+
+logging:
+  level:
+    com:
+      gatewayserver: DEBUG #set log level for gatewayserver package to DEBUG

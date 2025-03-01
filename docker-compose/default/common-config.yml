@@ -23,6 +23,12 @@ services:
       resources:
         limits:
           memory: 700m
+    #restart: on-failure
+    restart_policy:
+      condition: on-failure
+      delay: 10s
+      max_attempts: 3
+      window: 120s
 
   microservice-configserver-config:
     extends:
@@ -33,5 +39,9 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
 
-
+  microservice-eureka-config:
+    extends:
+      service: microservice-configserver-config
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
       # rabbit is not required for all services, so baseConfig and configserver logic should be separated and used accordingly

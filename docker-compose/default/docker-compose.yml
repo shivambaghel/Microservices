@@ -111,6 +111,24 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
+  gatewayserver:
+    image: "singhsbaghel/gatewayserver:s9"
+    container_name: gatewayserver-ms
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_started
+      loans:
+        condition: service_started
+      cards:
+        condition: service_started
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
 networks:
   ms-bank:
     driver: "bridge"                      # all microservices are interconnected as they are present in same network

@@ -41,7 +41,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s8"
+    image: "singhsbaghel/eurekaserver:s9"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -107,6 +107,24 @@ services:
         condition: service_started
       eurekaserver:
         condition: service_started
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  gatewayserver:
+    image: "singhsbaghel/gatewayserver:s9"
+    container_name: gatewayserver-ms
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_started
+      loans:
+        condition: service_started
+      cards:
+        condition: service_started
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
     extends:
       file: common-config.yml
       service: microservice-eureka-config

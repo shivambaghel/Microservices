@@ -31,7 +31,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "singhsbaghel/configserver:s8"
+    image: "singhsbaghel/configserver:s9"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -40,7 +40,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s8"
+    image: "singhsbaghel/eurekaserver:s9"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -54,7 +54,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "singhsbaghel/accounts:s8"   #image details
+    image: "singhsbaghel/accounts:s9"   #image details
     container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
     ports:
       - "8080:8080"                     # "8090:8099" if case of multiple port mapping
@@ -73,7 +73,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "singhsbaghel/loans:s8"
+    image: "singhsbaghel/loans:s9"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -93,7 +93,7 @@ services:
 
 
   cards:
-    image: "singhsbaghel/cards:s8"
+    image: "singhsbaghel/cards:s9"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -107,6 +107,24 @@ services:
         condition: service_started
       eurekaserver:
         condition: service_started
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  gatewayserver:
+    image: "singhsbaghel/gatewayserver:s9"
+    container_name: gatewayserver-ms
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_started
+      loans:
+        condition: service_started
+      cards:
+        condition: service_started
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
     extends:
       file: common-config.yml
       service: microservice-eureka-config

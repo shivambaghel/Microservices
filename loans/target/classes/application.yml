@@ -50,3 +50,8 @@ info:   # information about the service in eureka dashboard
     name: "loans"
     description: "Loans Service"
     version: 1.0.0
+
+logging:
+  level:
+    com:
+      loans: DEBUG

@@ -51,3 +51,8 @@ info:   # information about the service in eureka dashboard
     name: "accounts"
     description: "Accounts Service"
     version: 1.0.0
+
+logging:
+  level:
+    com:
+      accounts: DEBUG

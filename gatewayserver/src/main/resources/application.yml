@@ -1,3 +1,5 @@
+  # [DOC] https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/
+
 spring:
   application:
     name: gatewayserver
@@ -11,6 +13,13 @@ spring:
         locator:
           enabled: true #enable service discovery
           lowercaseserviceid: true #convert service id to lowercase
+      httpclient:               # timeout configuration for gateway for all rest & MS paths
+        connect-timeout: 1000   # timeout if gateway was not able to connect to required service in given time
+        response-timeout: 5s    # maximum time , gateway will wait for response from service
+
+        # circuit breaker have default/internal timeout in case of MS is not responding. no need any configuration for that
+        # CB will return fallback response in case of MS is not responding
+        # [doc] Spring cloud gateway -> 12- http timeout configuration -> enable/disable timeout for all or specific routes
 
 management:
   endpoints:

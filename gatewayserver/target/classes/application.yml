@@ -42,3 +42,11 @@ logging:
   level:
     com:
       gatewayserver: DEBUG #set log level for gatewayserver package to DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:       # accountsCircuitBreaker:  # can mention multiple configurations -> addnew ->  just use name used in the code
+      slidingWindowSize: 10       # how many requests to consider before changing status to open/close
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50    # percentage of failed requests to change status to open
+      waitDurationInOpenState: 10000    # time to wait before changing status to half open -> check if service is up

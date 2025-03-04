@@ -20,6 +20,13 @@ spring:
         # circuit breaker have default/internal timeout in case of MS is not responding. no need any configuration for that
         # CB will return fallback response in case of MS is not responding
         # [doc] Spring cloud gateway -> 12- http timeout configuration -> enable/disable timeout for all or specific routes
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
+  # docker run -p 6379:6379 --name eazyredis -d redis
 
 management:
   endpoints:

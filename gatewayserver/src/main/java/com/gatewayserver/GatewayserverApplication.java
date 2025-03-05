@@ -57,6 +57,7 @@ public class GatewayserverApplication {
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
 								.requestRateLimiter(config -> config.setRateLimiter(redisRateLimiter())
 										.setKeyResolver(userKeyResolver()))
+								//.bulkhead()  spring cloud does not support direct bulkhead implementation. instead use resilient4j+circuitbraker(internally uses bulkhead) configuration
 						)
 						.uri("lb://CARDS"))
 				.build();

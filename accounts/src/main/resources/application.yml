@@ -91,3 +91,16 @@ resilience4j.ratelimiter:
       timeoutDuration: 1000           # if rate limiter is not allowing request to pass {prior to next cycle [in case of more no of request]} , it will return 429 error response
       limitRefreshPeriod: 5000        # for each thread, what's the reset period per cycle
       limitForPeriod: 1               # request per second
+
+#resilience4j:
+#  bulkhead:
+#    instances:
+#      getJavaVersionBulkhead:
+#        maxConcurrentCalls: 5  # Allows 5 parallel requests
+#        maxWaitDuration: 2s    # Waits for 2 seconds if limit is exceeded
+#  thread-pool-bulkhead:
+#    instances:
+#      getJavaVersionThreadPoolBulkhead:
+#        maxThreadPoolSize: 10   # Max pool size
+#        coreThreadPoolSize: 5   # Core threads
+#        queueCapacity: 20       # Queue capacity for excess requests

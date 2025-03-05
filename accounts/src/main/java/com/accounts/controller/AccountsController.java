@@ -6,6 +6,7 @@ import com.accounts.dto.CustomerDto;
 import com.accounts.dto.ErrorResponseDto;
 import com.accounts.dto.ResponseDto;
 import com.accounts.service.IAccountsService;
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
@@ -234,12 +235,19 @@ public class AccountsController {
     )
     // if fallback option is not used , global exception message will be used
     @RateLimiter(name = "getJavaVersion", fallbackMethod = "getJavaVersionFallBack")
+    @Bulkhead(name = "getJavaVersionBulkhead", fallbackMethod = "getJavaVersionBulkheadFallBack")
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(environment.getProperty("JAVA_HOME"));
         // java_home is the environment variable that is set in the system
+    }
+
+    public ResponseEntity<String> getJavaVersionBulkheadFallBack(Throwable throwable) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Service is overloaded! Please try again later.");
     }
 
     public ResponseEntity<String> getJavaVersionFallBack(Throwable throwable) {

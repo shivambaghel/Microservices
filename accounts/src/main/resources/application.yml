@@ -82,3 +82,12 @@ resilience4j.retry:  # retry configuration for whole application
       retryExceptions:     # whenever defining retryException , ignoredException will automatically be ignored. so we can use only one
         - java.util.concurrent.TimeoutException
 
+
+# GATEWAY server [redis limiter, key resolver], we can enforce quota criteria based on user, IP, server.
+# this approach implement on individual MS requirement(Custom Requirement)
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000           # if rate limiter is not allowing request to pass {prior to next cycle [in case of more no of request]} , it will return 429 error response
+      limitRefreshPeriod: 5000        # for each thread, what's the reset period per cycle
+      limitForPeriod: 1               # request per second

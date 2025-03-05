@@ -21,7 +21,9 @@ C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\mapper\Acco
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\mapper\CustomerMapper.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\repository\AccountsRepository.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\repository\CustomerRepository.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\CardsFallback.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\CardsFeignClient.java
+C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\LoansFallback.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\client\LoansFeignClient.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\IAccountsService.java
 C:\Users\singh\git\Microservices\accounts\src\main\java\com\accounts\service\ICustomersService.java

@@ -1,3 +1,5 @@
+  # [DOC] https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/
+
 spring:
   application:
     name: gatewayserver
@@ -11,6 +13,20 @@ spring:
         locator:
           enabled: true #enable service discovery
           lowercaseserviceid: true #convert service id to lowercase
+      httpclient:               # timeout configuration for gateway for all rest & MS paths
+        connect-timeout: 1000   # timeout if gateway was not able to connect to required service in given time
+        response-timeout: 5s    # maximum time , gateway will wait for response from service
+
+        # circuit breaker have default/internal timeout in case of MS is not responding. no need any configuration for that
+        # CB will return fallback response in case of MS is not responding
+        # [doc] Spring cloud gateway -> 12- http timeout configuration -> enable/disable timeout for all or specific routes
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
+  # docker run -p 6379:6379 --name eazyredis -d redis
 
 management:
   endpoints:
@@ -45,8 +61,26 @@ logging:
 
 resilience4j.circuitbreaker:
   configs:
-    default:       # accountsCircuitBreaker:  # can mention multiple configurations -> addnew ->  just use name used in the code
-      slidingWindowSize: 10       # how many requests to consider before changing status to open/close
+    default: # accountsCircuitBreaker:  # can mention multiple configurations -> addnew ->  just use name used in the code
+      slidingWindowSize: 10             # how many requests to consider before changing status to open/close
       permittedNumberOfCallsInHalfOpenState: 2
-      failureRateThreshold: 50    # percentage of failed requests to change status to open
+      failureRateThreshold: 50          # percentage of failed requests to change status to open
       waitDurationInOpenState: 10000    # time to wait before changing status to half open -> check if service is up
+
+      #http://localhost:8072/actuator/circuitbreakers
+      #http://localhost:8072/actuator/circuitbreakers?name=accountsCircuitBreaker -> log of all api request from the application start
+
+
+#resilience4j:
+  #  circuitbreaker:
+  #    circuitBreakerAspectOrder: 1
+  #  retry:
+  #    retryAspectOrder: 2
+
+  #lower the higher priority
+  # Bulkhead (100) → CircuitBreaker (200) → Retry (300) → RateLimiter (400) → TimeLimiter (500)
+  #- resilience4j.retry.retryAspectOrder
+  #- resilience4j.circuitbreaker.circuitBreakerAspectOrder
+  #- resilience4j.ratelimiter.rateLimiterAspectOrder
+  #- resilience4j.timelimiter.timeLimiterAspectOrder
+  #- resilience4j.bulkhead.bulkheadAspectOrder

@@ -7,8 +7,10 @@ com\accounts\dto\LoansDto.class
 com\accounts\dto\CustomerDetailsDto.class
 com\accounts\exception\GlobalExceptionHandler.class
 com\accounts\controller\AccountsController.class
+com\accounts\service\client\CardsFallback.class
 com\accounts\exception\CustomerAlreadyExistsException.class
 com\accounts\repository\AccountsRepository.class
+com\accounts\service\client\LoansFallback.class
 com\accounts\entity\BaseEntity.class
 com\accounts\service\ICustomersService.class
 com\accounts\AccountsApplication.class

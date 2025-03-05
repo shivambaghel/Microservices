@@ -4,10 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section10 - BulkHead Pattern - gateway cloud (!supported)">
+    <list default="true" id="feee6d98-7dec-408d-83da-96cc676a3fb8" name="Changes" comment="section10 - Docker configuration">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/accounts-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/controller/AccountsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/controller/AccountsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/service/client/CardsFeignClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/service/client/CardsFeignClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/classes/com/accounts/service/client/LoansFeignClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/classes/com/accounts/service/client/LoansFeignClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/surefire-reports/TEST-com.accounts.AccountsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/surefire-reports/TEST-com.accounts.AccountsApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/target/surefire-reports/com.accounts.AccountsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/target/surefire-reports/com.accounts.AccountsApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/cards-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/surefire-reports/TEST-com.cards.CardsApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/surefire-reports/TEST-com.cards.CardsApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/target/surefire-reports/com.cards.CardsApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cards/target/surefire-reports/com.cards.CardsApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/target/configserver-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/target/configserver-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/target/configserver-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/target/configserver-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/target/surefire-reports/TEST-com.configserver.ConfigserverApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/target/surefire-reports/TEST-com.configserver.ConfigserverApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/target/surefire-reports/com.configserver.ConfigserverApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/target/surefire-reports/com.configserver.ConfigserverApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/target/eurekaserver-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/target/eurekaserver-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/target/eurekaserver-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/target/eurekaserver-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/target/surefire-reports/TEST-com.eurekaserver.EurekaserverApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/target/surefire-reports/TEST-com.eurekaserver.EurekaserverApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/target/surefire-reports/com.eurekaserver.EurekaserverApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/target/surefire-reports/com.eurekaserver.EurekaserverApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/classes/com/gatewayserver/GatewayserverApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/classes/com/gatewayserver/GatewayserverApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/classes/com/gatewayserver/filters/ResponseTraceFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/classes/com/gatewayserver/filters/ResponseTraceFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/gatewayserver-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/gatewayserver-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/gatewayserver-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/gatewayserver-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/surefire-reports/TEST-com.gatewayserver.GatewayserverApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/surefire-reports/TEST-com.gatewayserver.GatewayserverApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/target/surefire-reports/com.gatewayserver.GatewayserverApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/target/surefire-reports/com.gatewayserver.GatewayserverApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/loans-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/surefire-reports/TEST-com.loans.LoansApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/surefire-reports/TEST-com.loans.LoansApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/target/surefire-reports/com.loans.LoansApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loans/target/surefire-reports/com.loans.LoansApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,24 +98,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AccountsApplication.executor": "Run",
-    "Application.CardsApplication.executor": "Run",
-    "Application.ConfigserverApplication.executor": "Run",
-    "Application.EurekaserverApplication.executor": "Run",
-    "Application.GatewayserverApplication.executor": "Run",
-    "Application.LoansApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "Section10---Making-Microservices-fault-tolerant-and-resilient",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/singh/git/Microservices/gatewayserver",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Section10---Making-Microservices-fault-tolerant-and-resilient&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/singh/git/Microservices/gatewayserver&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.accounts.service.client" />
@@ -99,7 +135,7 @@
       <recent name="com.accounts.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GatewayserverApplication">
+  <component name="RunManager" selected="Application.ConfigserverApplication">
     <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.accounts.AccountsApplication" />
       <module name="accounts" />
@@ -113,12 +149,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.configserver.ConfigserverApplication" />
-      <module name="configserver" />
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cards.CardsApplication" />
+      <module name="cards" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.configserver.*" />
+          <option name="PATTERN" value="com.cards.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,12 +162,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.eurekaserver.EurekaserverApplication" />
-      <module name="eurekaserver" />
+    <configuration name="ConfigserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.configserver.ConfigserverApplication" />
+      <module name="configserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eurekaserver.*" />
+          <option name="PATTERN" value="com.configserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,19 +202,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.CardsApplication" />
       <item itemvalue="Application.AccountsApplication" />
       <item itemvalue="Application.ConfigserverApplication" />
-      <item itemvalue="Application.EurekaserverApplication" />
       <item itemvalue="Application.GatewayserverApplication" />
       <item itemvalue="Application.LoansApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoansApplication" />
         <item itemvalue="Application.GatewayserverApplication" />
-        <item itemvalue="Application.EurekaserverApplication" />
         <item itemvalue="Application.ConfigserverApplication" />
         <item itemvalue="Application.AccountsApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.LoansApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -487,7 +523,47 @@
       <option name="project" value="LOCAL" />
       <updated>1741161373416</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="section10 - BulkHead Pattern - Individual MS lvl - yml approach">
+      <option name="closed" value="true" />
+      <created>1741161892696</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1741161892696</updated>
+    </task>
+    <task id="LOCAL-00039" summary="section10 - BulkHead Pattern - Individual MS lvl - yml approach">
+      <option name="closed" value="true" />
+      <created>1741161924818</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1741161924818</updated>
+    </task>
+    <task id="LOCAL-00040" summary="section10 - BulkHead Pattern - Individual MS lvl - yml approach">
+      <option name="closed" value="true" />
+      <created>1741161956403</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1741161956403</updated>
+    </task>
+    <task id="LOCAL-00041" summary="section10 - Aspect Order - custom order of resilience4j patterns">
+      <option name="closed" value="true" />
+      <created>1741164132213</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1741164132213</updated>
+    </task>
+    <task id="LOCAL-00042" summary="section10 - Docker configuration">
+      <option name="closed" value="true" />
+      <created>1741169820318</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1741169820318</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -502,8 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (Manual post api trigger needed)" />
-    <MESSAGE value="section6 - spring cloud config - Refresh configurations at runtime using Spring Cloud Bus (automatic - github webhook)" />
     <MESSAGE value="section6 - spring cloud config - Optimizing Docker Compose file - along with readiness/liveness setup" />
     <MESSAGE value="section6 - spring cloud config - Docker setup - ordering of modules" />
     <MESSAGE value="section6 - Final Push" />
@@ -525,8 +599,10 @@
     <MESSAGE value="section10 - retry pattern + backoff Strategy -&gt; inside individual MS" />
     <MESSAGE value="section10 - rate Limiter - gateway server lvl" />
     <MESSAGE value="section10 - rate Limiter - Individual MS lvl - yml approach" />
-    <MESSAGE value="section10 - BulkHead Pattern - Individual MS lvl - yml approach" />
     <MESSAGE value="section10 - BulkHead Pattern - gateway cloud (!supported)" />
-    <option name="LAST_COMMIT_MESSAGE" value="section10 - BulkHead Pattern - gateway cloud (!supported)" />
+    <MESSAGE value="section10 - BulkHead Pattern - Individual MS lvl - yml approach" />
+    <MESSAGE value="section10 - Aspect Order - custom order of resilience4j patterns" />
+    <MESSAGE value="section10 - Docker configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="section10 - Docker configuration" />
   </component>
 </project>

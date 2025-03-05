@@ -1,5 +1,17 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli ping | grep PONG" ]
+      timeout: 10s
+      retries: 10
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   accountsdb:
     container_name: accountsdb
     ports:
@@ -31,7 +43,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "singhsbaghel/configserver:s9"
+    image: "singhsbaghel/configserver:s10"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -40,7 +52,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s9"
+    image: "singhsbaghel/eurekaserver:s10"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -54,7 +66,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "singhsbaghel/accounts:s9"   #image details
+    image: "singhsbaghel/accounts:s10"   #image details
     container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
     ports:
       - "8080:8080"                     # "8090:8099" if case of multiple port mapping
@@ -73,7 +85,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "singhsbaghel/loans:s9"
+    image: "singhsbaghel/loans:s10"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -93,7 +105,7 @@ services:
 
 
   cards:
-    image: "singhsbaghel/cards:s9"
+    image: "singhsbaghel/cards:s10"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -112,7 +124,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "singhsbaghel/gatewayserver:s9"
+    image: "singhsbaghel/gatewayserver:s10"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -123,8 +135,14 @@ services:
         condition: service_started
       cards:
         condition: service_started
+      redis:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "gatewayserver"
+      SPRING_DATA_REDIS_CONNECT-TIMEOUT: 2s
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+      SPRING_DATA_REDIS_TIMEOUT: 1s
     extends:
       file: common-config.yml
       service: microservice-eureka-config

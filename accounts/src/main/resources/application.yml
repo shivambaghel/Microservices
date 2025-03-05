@@ -92,15 +92,15 @@ resilience4j.ratelimiter:
       limitRefreshPeriod: 5000        # for each thread, what's the reset period per cycle
       limitForPeriod: 1               # request per second
 
-#resilience4j:
-#  bulkhead:
-#    instances:
-#      getJavaVersionBulkhead:
-#        maxConcurrentCalls: 5  # Allows 5 parallel requests
-#        maxWaitDuration: 2s    # Waits for 2 seconds if limit is exceeded
-#  thread-pool-bulkhead:
-#    instances:
-#      getJavaVersionThreadPoolBulkhead:
-#        maxThreadPoolSize: 10   # Max pool size
-#        coreThreadPoolSize: 5   # Core threads
-#        queueCapacity: 20       # Queue capacity for excess requests
+resilience4j:
+  bulkhead:
+    instances:
+      getJavaVersionBulkhead:
+        maxConcurrentCalls: 5  # Allows 5 parallel requests
+        maxWaitDuration: 2s    # Waits for 2 seconds if limit is exceeded
+  thread-pool-bulkhead:
+    instances:
+      getJavaVersionThreadPoolBulkhead:
+        maxThreadPoolSize: 10   # Max pool size
+        coreThreadPoolSize: 5   # Core threads
+        queueCapacity: 20       # Queue capacity for excess requests

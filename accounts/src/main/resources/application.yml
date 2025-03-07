@@ -18,6 +18,10 @@ spring:
       mode: always
   config:
     import: "optional:configserver:http://localhost:8071/" #import configuration from config server using path
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true  # enable circuit breaker for feign client
 
 management:
   endpoints:
@@ -56,3 +60,47 @@ logging:
   level:
     com:
       accounts: DEBUG
+
+resilience4j.circuitbreaker:    # circuit breaker configuration for whole application
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
+
+# https://resilience4j.readme.io/docs/getting-started-3#configuration
+resilience4j.retry:  # retry configuration for whole application
+  configs:
+    default:         # in case of multiple config scenario we can define multiple config as example -> name used at @Retry -> getBuildInfo:
+      maxAttempts: 3
+      waitDuration: 500
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      ignoreExceptions:
+        - java.lang.NullPointerException
+      retryExceptions:     # whenever defining retryException , ignoredException will automatically be ignored. so we can use only one
+        - java.util.concurrent.TimeoutException
+
+
+# GATEWAY server [redis limiter, key resolver], we can enforce quota criteria based on user, IP, server.
+# this approach implement on individual MS requirement(Custom Requirement)
+resilience4j.ratelimiter:
+  configs:
+    default:
+      timeoutDuration: 1000           # if rate limiter is not allowing request to pass {prior to next cycle [in case of more no of request]} , it will return 429 error response
+      limitRefreshPeriod: 5000        # for each thread, what's the reset period per cycle
+      limitForPeriod: 1               # request per second
+
+resilience4j:
+  bulkhead:
+    instances:
+      getJavaVersionBulkhead:
+        maxConcurrentCalls: 5  # Allows 5 parallel requests
+        maxWaitDuration: 2s    # Waits for 2 seconds if limit is exceeded
+  thread-pool-bulkhead:
+    instances:
+      getJavaVersionThreadPoolBulkhead:
+        maxThreadPoolSize: 10   # Max pool size
+        coreThreadPoolSize: 5   # Core threads
+        queueCapacity: 20       # Queue capacity for excess requests

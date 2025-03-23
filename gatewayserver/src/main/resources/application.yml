@@ -15,7 +15,7 @@ spring:
           lowercaseserviceid: true #convert service id to lowercase
       httpclient:               # timeout configuration for gateway for all rest & MS paths
         connect-timeout: 1000   # timeout if gateway was not able to connect to required service in given time
-        response-timeout: 5s    # maximum time , gateway will wait for response from service
+        response-timeout: 10s    # maximum time , gateway will wait for response from service
 
         # circuit breaker have default/internal timeout in case of MS is not responding. no need any configuration for that
         # CB will return fallback response in case of MS is not responding
@@ -43,6 +43,9 @@ management:
   info:
     env:
       enabled: true #enable environment info in actuator info endpoint
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 endpoints:
   shutdown:
@@ -58,6 +61,8 @@ logging:
   level:
     com:
       gatewayserver: DEBUG #set log level for gatewayserver package to DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 resilience4j.circuitbreaker:
   configs:

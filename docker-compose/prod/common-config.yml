@@ -3,18 +3,18 @@ services:
     networks:
       - ms-bank
 
-  microservice-db-config:
-    extends:
-      service: network-deploy-service
-    image: mysql
-    healthcheck:
-      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
-      timeout: 10s
-      retries: 10
-      interval: 10s
-      start_period: 10s
-    environment:
-      MYSQL_ROOT_PASSWORD: root
+#  microservice-db-config:
+#    extends:
+#      service: network-deploy-service
+#    image: mysql
+#    healthcheck:
+#      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+#      timeout: 10s
+#      retries: 10
+#      interval: 10s
+#      start_period: 10s
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
 
   microservice-base-config:
     extends:
@@ -23,13 +23,19 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 900m
+          memory: 2000m
       #restart: on-failure
       restart_policy:
         condition: on-failure
         delay: 10s
         max_attempts: 3
         window: 120s
+    environment:
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar" # java agent -> dependency jar location in app
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://tempo:4318     # tempo endpoint -> opentelemetry will send all metrics to tempo
+      OTEL_METRICS_EXPORTER: none                        # don't send metrics using opentelemetry
+      OTEL_LOGS_EXPORTER: none
+
 
 
   microservice-configserver-config:
@@ -38,8 +44,8 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: root     related to mysql DB
 
   microservice-eureka-config:
     extends:

@@ -7,11 +7,18 @@ spring:
     active: "prod"  #set active profile to prod default
   datasource:
     # docker run -p 3307:3306 --name loansdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=loansdb -d mysql
-    url: jdbc:mysql://localhost:3307/loansdb
-    username: root
-    password: root
+    url: jdbc:h2:mem:testdb        #jdbc:mysql://localhost:3307/loansdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
   jpa:
-    show-sql: true
+   database-platform: org.hibernate.dialect.H2Dialect
+   hibernate:
+     ddl-auto: update
+   show-sql: true
   sql:
     init:
       mode: always # always recreate the schema using schema.sql {with h2 its not necessury but with mysql it is}
@@ -31,6 +38,9 @@ management:
   info:
     env:
       enabled: true #enable environment info in actuator info endpoint
+  metrics:
+    tags:
+      application: ${spring.application.name} # group logs and metrics by application [micrometer]
 
 endpoints:
   shutdown:
@@ -55,3 +65,5 @@ logging:
   level:
     com:
       loans: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

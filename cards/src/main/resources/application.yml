@@ -7,10 +7,17 @@ spring:
     active: "prod"  #set active profile to prod default
   datasource:
     # docker run -p 3308:3306 --name cardsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=cardsdb -d mysql
-    url: jdbc:mysql://localhost:3308/cardsdb
-    username: root
-    password: root
+    url: jdbc:h2:mem:testdb                  #jdbc:mysql://localhost:3308/cardsdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
     show-sql: true
   sql:
     init:
@@ -31,6 +38,9 @@ management:
   info:
     env:
       enabled: true #enable environment info in actuator info endpoint
+  metrics:
+    tags:
+      application: ${spring.application.name}  # group logs by application [micrometer]
 
 eureka:
   instance:
@@ -51,3 +61,5 @@ logging:
   level:
     com:
      cards: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"

@@ -8,10 +8,20 @@ spring:
     active: "prod"  #set active profile to prod default
   datasource:
     # docker run -p 3306:3306 --name accountsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=accountsdb -d mysql
-    url: jdbc:mysql://localhost:3306/accountsdb
-    username: root
-    password: root
+    #url: jdbc:mysql://localhost:3306/accountsdb
+    #username: root
+    #password: root
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
     show-sql: true
   sql:
     init:
@@ -36,6 +46,9 @@ management:
   info:
     env:
       enabled: true #enable environment info in actuator info endpoint
+  metrics:
+    tags:
+      application: ${spring.application.name} # group logs by application [micrometer]
 
 endpoints:
   shutdown:
@@ -60,6 +73,8 @@ logging:
   level:
     com:
       accounts: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 resilience4j.circuitbreaker:    # circuit breaker configuration for whole application
   configs:

@@ -24,17 +24,24 @@ import reactor.core.publisher.Mono;
 public class SecurityConfig {
 
     @Bean
-    public SecurityWebFilterChain springSecurityFilterChain2(ServerHttpSecurity serverHttpSecurity) {
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges ->
-                        exchanges.pathMatchers(HttpMethod.GET).permitAll()
-                                .pathMatchers("/eazybank/accounts/**").authenticated()
-                                .pathMatchers("/eazybank/cards/**").authenticated()
-                                .pathMatchers("/eazybank/loans/**").authenticated())
-                // all get methods are allowed as parent is permitAll() and all other methods types will be authenticated
-                // can use comma separated list instead of multiple pathMatchers ex -> .pathMatchers("/eazybank/accounts/**","/eazybank/cards/**","/eazybank/loans/**").authenticated()
-                .oauth2ResourceServer(oAuth2ResourceServerSpec ->
-                        oAuth2ResourceServerSpec.jwt(Customizer.withDefaults()));   // default configuration
-        serverHttpSecurity.csrf(ServerHttpSecurity.CsrfSpec::disable);              // csrf disabled, only required when Frontend/browser is involved
+                 exchanges.pathMatchers(HttpMethod.GET).permitAll()
+                .pathMatchers("/eazybank/accounts/**").hasRole("ACCOUNTS")
+                .pathMatchers("/eazybank/cards/**").hasRole("CARDS")
+                .pathMatchers("/eazybank/loans/**").hasRole("LOANS"))
+                .oauth2ResourceServer(oAuth2ResourceServerSpec -> oAuth2ResourceServerSpec
+                        .jwt(jwtSpec -> jwtSpec.jwtAuthenticationConverter(grantedAuthoritiesExtractor())));
+        serverHttpSecurity.csrf(ServerHttpSecurity.CsrfSpec::disable);
         return serverHttpSecurity.build();
+    }
+
+    // hasRole("ACCOUNTS") -> authorization
+
+    // utilize the KeycloakRoleConverter logic inside SecurityConfig class
+    private Converter<Jwt, Mono<AbstractAuthenticationToken>> grantedAuthoritiesExtractor() {
+        JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
+        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new KeycloakRoleConverter());
+        return new ReactiveJwtAuthenticationConverterAdapter(jwtAuthenticationConverter);
     }
 }

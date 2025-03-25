@@ -101,7 +101,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>singhsbaghel/${project.artifactId}:s10</name>
+						<name>singhsbaghel/${project.artifactId}:s12</name>
 					</image>
 				</configuration>
 			</plugin>

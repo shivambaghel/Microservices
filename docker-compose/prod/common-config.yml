@@ -23,7 +23,7 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 900m
+          memory: 1500m
       #restart: on-failure
       restart_policy:
         condition: on-failure

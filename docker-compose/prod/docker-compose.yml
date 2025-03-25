@@ -1,5 +1,18 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.7
+    container_name: keycloak
+    ports:
+      - "7080:8080"
+    environment:
+      KEYCLOAK_ADMIN: "admin"
+      KEYCLOAK_ADMIN_PASSWORD: "admin"
+    command: "start-dev"     # keyclock container will start in dev mode and utilize internal db
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   redis:
     image: redis
     ports:
@@ -43,7 +56,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "singhsbaghel/configserver:s10"
+    image: "singhsbaghel/configserver:s12"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -52,7 +65,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s10"
+    image: "singhsbaghel/eurekaserver:s12"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -65,11 +78,11 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
+# excluding ports so services can be accessed present in same docker network - blocked for external access
+
   accounts:
-    image: "singhsbaghel/accounts:s10"   #image details
+    image: "singhsbaghel/accounts:s12"   #image details
     container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
-    ports:
-      - "8080:8080"                     # "8090:8099" if case of multiple port mapping
     environment:
       SPRING_APPLICATION_NAME: "accounts"  # application name
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
@@ -85,10 +98,8 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "singhsbaghel/loans:s10"
+    image: "singhsbaghel/loans:s12"
     container_name: loans-ms
-    ports:
-      - "8090:8090"
     environment:
       SPRING_APPLICATION_NAME: "loans"
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
@@ -105,10 +116,8 @@ services:
 
 
   cards:
-    image: "singhsbaghel/cards:s10"
+    image: "singhsbaghel/cards:s12"
     container_name: cards-ms
-    ports:
-      - "9000:9000"
     environment:
       SPRING_APPLICATION_NAME: "cards"
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
@@ -124,7 +133,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "singhsbaghel/gatewayserver:s10"
+    image: "singhsbaghel/gatewayserver:s12"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -138,6 +147,7 @@ services:
       redis:
         condition: service_healthy
     environment:
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
       SPRING_APPLICATION_NAME: "gatewayserver"
       SPRING_DATA_REDIS_CONNECT-TIMEOUT: 2s
       SPRING_DATA_REDIS_HOST: redis

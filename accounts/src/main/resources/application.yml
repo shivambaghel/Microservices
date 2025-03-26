@@ -22,6 +22,18 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true  # enable circuit breaker for feign client
+    function:
+      definition: updateCommunication
+      stream:
+        bindings:
+          sendCommunication-out-0:
+            destination: send-communication
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
 
 management:
   endpoints:

@@ -1,17 +1,23 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
-  rabbit:
-    image: rabbitmq:4.0-management
-    hostname: rabbitmq
+#  https://github.com/bitnami/containers/blob/main/bitnami/kafka/docker-compose.yml
+  kafka:
+    image: docker.io/bitnami/kafka:3.9
     ports:
-      - "5672:5672"
-      - "15672:15672"
-    healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 5s
+      - "9092:9092"
+    volumes:
+      - "kafka_data:/bitnami"
+    environment:
+      # KRaft settings
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      # Listeners
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
     extends:
       file: common-config.yml
       service: network-deploy-service
@@ -72,7 +78,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "singhsbaghel/configserver:s13"
+    image: "singhsbaghel/configserver:s14"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -81,7 +87,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s13"
+    image: "singhsbaghel/eurekaserver:s14"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -97,12 +103,12 @@ services:
 # excluding ports so services can be accessed present in same docker network - blocked for external access
 
   accounts:
-    image: "singhsbaghel/accounts:s13"   #image details
+    image: "singhsbaghel/accounts:s14"   #image details
     container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
     environment:
       SPRING_APPLICATION_NAME: "accounts"  # application name
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
-      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
     depends_on:
       accountsdb:
         condition: service_healthy
@@ -110,14 +116,12 @@ services:
         condition: service_started
       eurekaserver:
         condition: service_started
-      rabbit:
-        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   loans:
-    image: "singhsbaghel/loans:s13"
+    image: "singhsbaghel/loans:s14"
     container_name: loans-ms
     environment:
       SPRING_APPLICATION_NAME: "loans"
@@ -135,7 +139,7 @@ services:
 
 
   cards:
-    image: "singhsbaghel/cards:s13"
+    image: "singhsbaghel/cards:s14"
     container_name: cards-ms
     environment:
       SPRING_APPLICATION_NAME: "cards"
@@ -152,19 +156,19 @@ services:
       service: microservice-eureka-config
 
   message:
-    image: "eazybytes/message:s13"
+    image: "eazybytes/message:s14"
     container_name: message-ms
     depends_on:
       rabbit:
         condition: service_healthy
     environment:
-      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
     extends:
       file: common-config.yml
       service: network-deploy-service
 
   gatewayserver:
-    image: "singhsbaghel/gatewayserver:s13"
+    image: "singhsbaghel/gatewayserver:s14"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
@@ -187,6 +191,10 @@ services:
     extends:
       file: common-config.yml
       service: microservice-eureka-config
+
+volumes:
+  kafka_data:
+    driver: local
 
 networks:
   ms-bank:

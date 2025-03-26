@@ -22,6 +22,21 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true  # enable circuit breaker for feign client
+    function:
+      definition: updateCommunication  # function name used in code  [multi function scenario -> function1;function2;function3]
+    stream:
+      bindings:
+        updateCommunication-in-0: # binding name-input-starting index
+          destination: communication-sent        # queue name where account ms will look for the message
+          group: ${spring.application.name}      # custom prefix for group tag otherwise rabbitmq will create random prefix -> leads to data inconsistency
+        sendCommunication-out-0:
+          destination: send-communication
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
 
 management:
   endpoints:

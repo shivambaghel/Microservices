@@ -1,5 +1,21 @@
 # dependency -> loan/cards/accounts -> configserver -> rabbitmq
 services:
+  rabbit:
+    image: rabbitmq:4.0-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   keycloak:
     image: quay.io/keycloak/keycloak:26.0.7
     container_name: keycloak
@@ -56,7 +72,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "singhsbaghel/configserver:s12"
+    image: "singhsbaghel/configserver:s13"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -65,7 +81,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "singhsbaghel/eurekaserver:s12"
+    image: "singhsbaghel/eurekaserver:s13"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -81,11 +97,12 @@ services:
 # excluding ports so services can be accessed present in same docker network - blocked for external access
 
   accounts:
-    image: "singhsbaghel/accounts:s12"   #image details
+    image: "singhsbaghel/accounts:s13"   #image details
     container_name: accounts-ms         # custom name , if not provided random name will be populated by the docker
     environment:
       SPRING_APPLICATION_NAME: "accounts"  # application name
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
+      SPRING_RABBITMQ_HOST: "rabbit"
     depends_on:
       accountsdb:
         condition: service_healthy
@@ -93,12 +110,14 @@ services:
         condition: service_started
       eurekaserver:
         condition: service_started
+      rabbit:
+        condition: service_healthy
     extends:
       file: common-config.yml
       service: microservice-eureka-config
 
   loans:
-    image: "singhsbaghel/loans:s12"
+    image: "singhsbaghel/loans:s13"
     container_name: loans-ms
     environment:
       SPRING_APPLICATION_NAME: "loans"
@@ -116,7 +135,7 @@ services:
 
 
   cards:
-    image: "singhsbaghel/cards:s12"
+    image: "singhsbaghel/cards:s13"
     container_name: cards-ms
     environment:
       SPRING_APPLICATION_NAME: "cards"
@@ -132,8 +151,20 @@ services:
       file: common-config.yml
       service: microservice-eureka-config
 
+  message:
+    image: "eazybytes/message:s13"
+    container_name: message-ms
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    environment:
+      SPRING_RABBITMQ_HOST: "rabbit"
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   gatewayserver:
-    image: "singhsbaghel/gatewayserver:s12"
+    image: "singhsbaghel/gatewayserver:s13"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
